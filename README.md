@@ -74,7 +74,7 @@ streamlit run app.py
 ````
 ## 🚀 Launch the Dashboard
 
-[▶️ Abrir Dashboard no Navegador](http://localhost:8501)
+[▶️ Open Dashboard on Browser](http://localhost:8501)
 
 ----
 ✨ Outcome
