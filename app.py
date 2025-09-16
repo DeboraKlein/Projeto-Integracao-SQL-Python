@@ -149,13 +149,15 @@ aba1, aba2, aba3, aba4, aba5, aba6, aba7 = st.tabs([
 
 
 # 13. Gráfico por Canal (aba 1)
+
 with aba1:
+    # Ordena os dados pela Receita (decrescente)
     df_filtrado = df_filtrado.sort_values(by='Receita', ascending=False)
 
-    fig_canal = px.bar(df_filtrado, 
-                       x='Receita', 
-                       y='ChannelName',
-                       orientation='h',
+    # Cria gráfico de barras verticais com ordem manual
+    fig_canal = px.bar(df_filtrado,
+                       x='ChannelName',
+                       y='Receita',
                        color='ChannelName',
                        color_discrete_sequence=cores_personalizadas,
                        labels={'ChannelName': 'Canal de Vendas', 'Receita': 'Receita (R$)'},
@@ -164,12 +166,10 @@ with aba1:
 
     fig_canal.update_layout(
         showlegend=False,
-        margin=dict(t=40),
-)
+        margin=dict(t=40)
+    )
 
     st.plotly_chart(fig_canal, use_container_width=True)
-
-
 
     
 # 14. Gráfico por Região (aba 2)
