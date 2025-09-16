@@ -108,7 +108,7 @@ margem_total = receita_total - custo_total
 quantidade_total = df_filtrado['Quantidade'].sum()
 
 
-cor_margem = "green" if margem_total >= 0 else "red"
+cor_margem = "#0078D4" if margem_total >= 0 else "red"
 
 # 10. Função para formatar valores grandes
 
@@ -123,8 +123,6 @@ def format_num(valor):
         return f"R$ {valor:.2f}"
 
 # 11. Exibição dos KPIs com cor
-
-st.markdown("### 📈 Receita por Canal", help="Clique no menu lateral para navegar direto aqui")
 
 col1, col2, col3, col4 = st.columns(4)
 
@@ -167,8 +165,7 @@ with aba1:
     fig_canal.update_layout(
         showlegend=False,
         margin=dict(t=40),
-        modebar=dict(remove=["zoom", "pan"], add=["toImage"])
-    )
+)
 
     st.plotly_chart(fig_canal, use_container_width=True)
 
@@ -194,7 +191,6 @@ with aba2:
     fig_regiao.update_layout(
         showlegend=False,
         margin=dict(t=40),
-        modebar=dict(remove=["zoom", "pan"], add=["toImage"])
 )
 
     st.plotly_chart(fig_regiao, use_container_width=True)
@@ -215,7 +211,6 @@ with aba3:
     title="Evolução da Receita por Ano",
     showlegend=True,
     margin=dict(t=40),
-    modebar=dict(remove=["zoom", "pan"], add=["toImage"])
 )
 
     st.plotly_chart(fig_ano, use_container_width=True)
@@ -235,7 +230,6 @@ with aba4:
     title="Participação dos Canais de Vendas",
     showlegend=True,
     margin=dict(t=40),
-    modebar=dict(remove=["zoom", "pan"], add=["toImage"])
 )
 
     st.plotly_chart(fig_pizza, use_container_width=True)
@@ -255,7 +249,6 @@ with aba5:
     title="Receita Total por País",
     showlegend=True,
     margin=dict(t=40),
-    modebar=dict(remove=["zoom", "pan"], add=["toImage"])
 )
 
     st.plotly_chart(fig_mapa, use_container_width=True)
@@ -275,7 +268,6 @@ with aba6:
     title="Evolução da Receita por Canal ao Longo dos Anos",
     showlegend=True,
     margin=dict(t=40),
-    modebar=dict(remove=["zoom", "pan"], add=["toImage"])
 )
 
 
@@ -292,4 +284,5 @@ with aba7:
         file_name='dados_agregados.csv',
         mime='text/csv'
 )
+
     
