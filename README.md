@@ -72,7 +72,7 @@ Este projeto foi uma descoberta prática das bibliotecas **Streamlit** e **Plotl
 pip install -r requirements.txt
 streamlit run app.py
 
-
+````
 ### 1. Importação de bibliotecas
 ````
 
