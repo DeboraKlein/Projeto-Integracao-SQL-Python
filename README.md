@@ -49,6 +49,12 @@ O dashboard é dividido em abas temáticas:
 - 📦 Exportações  
 
 Cada aba apresenta visualizações específicas com filtros aplicáveis, tornando a experiência fluida e intuitiva.
+---
+
+## 🚀 Acesse o Dashboard
+
+[▶️ Abrir Dashboard no Navegador](http://localhost:8501)
+
 
 ---
 
