@@ -71,8 +71,9 @@ def format_kpi(label, value, color="black"):
             <p style="font-size: 24px; color: {color}; font-weight: bold;">{value}</p>
         </div>
     """, unsafe_allow_html=True)
-    
-# 6. Filtros interativos na sidebar
+````
+### 6. Filtros interativos na sidebar
+````
 
 st.sidebar.header("🔍 Filtros")
 
@@ -86,16 +87,18 @@ canal_selecionado = st.sidebar.multiselect("Canal de Vendas", canais, default=ca
 regioes = sorted(df['RegionCountryName'].unique())
 regiao_selecionada = st.sidebar.multiselect("Região", regioes, default=regioes)
 
-
-# Botão de Reset dos Filtros
+````
+### 7. Botão de Reset dos Filtros
+````
 
 if st.sidebar.button("🔄 Resetar Filtros"):
     ano_selecionado = anos[0]
     canal_selecionado = canais
     regiao_selecionada = regioes
 
-
-# 7. Aplicação dos filtros
+````
+### 8. Aplicação dos filtros
+````
 
 df_filtrado = df[
     (df['CalendarYear'] == ano_selecionado) &
@@ -103,12 +106,15 @@ df_filtrado = df[
     (df['RegionCountryName'].isin(regiao_selecionada))
     
 ]
-
-# 8. Preparar os dados para o mapa
+````
+### 9. Preparar os dados para o mapa
+````
 
 df_mapa = df.groupby('RegionCountryName')['Receita'].sum().reset_index()
 
-# 9. Cálculo dos KPIs dinâmicos
+````
+### 10. Cálculo dos KPIs dinâmicos
+````
 
 receita_total = df_filtrado['Receita'].sum()
 custo_total = df_filtrado['Custo'].sum()
@@ -117,8 +123,9 @@ quantidade_total = df_filtrado['Quantidade'].sum()
 
 
 cor_margem = "green" if margem_total >= 0 else "red"
-
-# 10. Função para formatar valores grandes
+````
+### 11. Função para formatar valores grandes
+````
 
 def format_num(valor):
     if valor >= 1_000_000_000:
@@ -129,8 +136,9 @@ def format_num(valor):
         return f"R$ {valor / 1_000:.2f}K"
     else:
         return f"R$ {valor:.2f}"
-
-# 11. Exibição dos KPIs com cor
+````
+### 12. Exibição dos KPIs com cor
+````
 
 st.markdown("### 📈 Receita por Canal", help="Clique no menu lateral para navegar direto aqui")
 
@@ -145,8 +153,9 @@ with col3:
 with col4:
     format_kpi("Qtd Vendida", f"{int(quantidade_total):,}", "#0078D4")
 
-    
-# 12. Criar as abas
+````    
+# 13. Criar as abas
+````
 aba1, aba2, aba3, aba4, aba5, aba6, aba7 = st.tabs([
     "📈 Receita por Canal",
     "📍 Receita por Continente",
@@ -157,8 +166,9 @@ aba1, aba2, aba3, aba4, aba5, aba6, aba7 = st.tabs([
     "📦 Exportações"
 ])
 
-
-# 13. Gráfico por Canal (aba 1)
+````
+### 14. Gráfico por Canal (aba 1)
+````
 with aba1:
     df_filtrado = df_filtrado.sort_values(by='Receita', ascending=False)
 
@@ -182,8 +192,9 @@ with aba1:
 
 
 
-    
-# 14. Gráfico por Região (aba 2)
+````
+### 15. Gráfico por Região (aba 2)
+````
 
 with aba2:
     df_continente = df.groupby('ContinentName')['Receita'].sum().reset_index()
@@ -207,8 +218,9 @@ with aba2:
 
     st.plotly_chart(fig_regiao, use_container_width=True)
 
-    
-# 15. Evolução Anual (aba 3)
+````
+### 16. Evolução Anual (aba 3)
+````
 
 with aba3:
     df_ano = df.groupby('CalendarYear')['Receita'].sum().reset_index()
@@ -228,8 +240,9 @@ with aba3:
 
     st.plotly_chart(fig_ano, use_container_width=True)
     
-    
-# 16. Participação dos Canais (aba 4)
+````
+### 17. Participação dos Canais (aba 4)
+````
 
 with aba4:
     df_canais = df.groupby('ChannelName')['Receita'].sum().reset_index()
@@ -247,8 +260,10 @@ with aba4:
 )
 
     st.plotly_chart(fig_pizza, use_container_width=True)
-    
-# 17. Gráfico de mapa com Plotly
+
+```` 
+### 18. Gráfico de mapa com Plotly
+````
 
 with aba5:
     df_mapa = df.groupby('RegionCountryName')['Receita'].sum().reset_index()
@@ -267,8 +282,10 @@ with aba5:
 )
 
     st.plotly_chart(fig_mapa, use_container_width=True)
-    
-# 18. Análise temporal: gráfico de linha com múltiplos canais
+
+````
+### 19. Análise temporal: gráfico de linha com múltiplos canais
+````
 
 with aba6:
     df_temporal = df.groupby(['CalendarYear', 'ChannelName'])['Receita'].sum().reset_index()
@@ -288,8 +305,9 @@ with aba6:
 
 
     st.plotly_chart(fig_temporal, use_container_width=True)
-    
-# 19. 4. Exportação avançada: download de dados agregados
+````  
+### 20. 4. Exportação avançada: download de dados agregados
+````
 
 with aba7:
     df_agregado = df.groupby(['ChannelName', 'RegionCountryName'])[['Receita', 'Custo', 'MargemLucro']].sum().reset_index()
