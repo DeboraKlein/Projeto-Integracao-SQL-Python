@@ -36,6 +36,7 @@ To create a visual interface that allows users to:
 - **Export mode enabled**: all charts include a download-as-image button
 
  ![Dashboard](https://github.com/user-attachments/assets/03bb3004-aa85-4272-8a6e-5c372d258d63) 
+ ![Dashboard](https://github.com/user-attachments/assets/679de1e3-b1ff-408f-aeb0-04c240736c8f) 
 
 ---
 
