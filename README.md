@@ -35,6 +35,8 @@ To create a visual interface that allows users to:
 - **Soft-toned KPIs**: reinforce visual identity without overwhelming the layout  
 - **Export mode enabled**: all charts include a download-as-image button
 
+ ![Dashboard](https://github.com/user-attachments/assets/03bb3004-aa85-4272-8a6e-5c372d258d63) 
+
 ---
 
 ## 🧭 Navigation
