@@ -1,6 +1,6 @@
 # 1. Importação de bibliotecas
 
-import seaborn as sns
+
 import plotly.express as px
 import numpy as np
 import datetime
