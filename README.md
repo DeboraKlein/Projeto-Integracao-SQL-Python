@@ -1,12 +1,12 @@
 # Projeto de Integração SQL/Python
 
-# 📊 Sales Dashboard — ContosoRetailDW
+# Sales Dashboard — ContosoRetailDW
 
 This project is an interactive dashboard built with **Streamlit** and **Plotly**, integrating data from the **ContosoRetailDW** SQL Server database via **PyODBC**. The goal is to deliver a clean, responsive, browser-based experience for exploring key sales metrics across channels, regions, and time.
 
 ---
 
-## 🚀 Purpose
+## Purpose
 
 To create a visual interface that allows users to:
 
@@ -17,7 +17,7 @@ To create a visual interface that allows users to:
 
 ---
 
-## 🧰 Libraries Used
+## Libraries Used
 
 | Library            | Purpose                                               |
 |--------------------|-------------------------------------------------------|
@@ -28,7 +28,7 @@ To create a visual interface that allows users to:
 
 ---
 
-## 🎨 Visual Design Choices
+## Visual Design Choices
 
 - **Custom Contoso Palette**: corporate tones with adjusted contrast to avoid similar blues  
 - **Horizontal bar charts**: improve readability and highlight top performers  
@@ -40,28 +40,28 @@ To create a visual interface that allows users to:
 
 ---
 
-## 🧭 Navigation
+## Navigation
 
 The dashboard is organized into thematic tabs:
 
-- 📈 Revenue by Channel  
-- 📍 Revenue by Continent  
-- 📊 Yearly Trends  
-- 🥧 Channel Share  
-- 🗺️ Revenue Map by Country  
-- 📦 Export Data  
+-  Revenue by Channel  
+-  Revenue by Continent  
+-  Yearly Trends  
+-  Channel Share  
+-  Revenue Map by Country  
+-  Export Data  
 
 Each tab presents targeted visualizations with applicable filters, making the experience smooth and intuitive.
 
 ---
 
-## 💡 Key Learnings
+## Key Learnings
 
 This project was a hands-on discovery of **Streamlit** and **Plotly**, showcasing how data can be transformed into a visual experience — all within the browser, without complex front-end frameworks.
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 - `app.py`: main dashboard script  
 - `requirements.txt`: project dependencies  
@@ -69,18 +69,18 @@ This project was a hands-on discovery of **Streamlit** and **Plotly**, showcasin
 
 ---
 
-## 🖥️ How to Run
+## How to Run
 
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
 ````
-## 🚀 Launch the Dashboard
+## Launch the Dashboard
 
 [▶️ Open Dashboard on Browser](http://localhost:8501)
 
 ----
-✨ Outcome
+## Outcome
 A lightweight, visually appealing, and functional application — perfect for executive presentations, internal analytics, or as a foundation for larger BI initiatives.
 ````
 
